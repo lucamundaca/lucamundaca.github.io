@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luca Mundaca - Bossa Nova Artist</title>
+    <meta name="description" content="Luca Mundaca - Bossa Nova, MPB, and Brazilian Jazz artist. Listen, buy music, and explore her work.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        section[id] {
+            scroll-margin-top: 100px;
+        }
+
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #4a4a4a;
+            --accent: #2a2a2a;
+            --text: #1a1a1a;
+            --text-light: #666666;
+            --bg: #f2f0ef;
+            --card-bg: #ffffff;
+            --border: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Georgia', 'Garamond', serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #faf8f7;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('plain-bg.jpg');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        header {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            padding: 4rem 0;
+            background: transparent;
+        }
+
+        .hero-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 42% 1fr;
+            align-items: stretch;
+        }
+
+        .hero-portrait {
+            position: relative;
+            min-height: 100%;
+            min-width: 0;
+            background: #e8e8e8;
+            overflow: hidden;
+        }
+
+        .hero-portrait img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            animation: heroFade 15s infinite;
+        }
+
+        .hero-portrait img.slide-1 {
+            object-position: center 30%;
+        }
+
+        .hero-portrait img.slide-2 {
+            object-position: center 45%;
+            animation-delay: -7.5s;
+        }
+
+        @keyframes heroFade {
+            0%   { opacity: 1; }
+            40%  { opacity: 1; }
+            50%  { opacity: 0; }
+            90%  { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-portrait img {
+                animation: none;
+            }
+            .hero-portrait img.slide-2 {
+                opacity: 0;
+            }
+        }
+
+        .hero-text {
+            padding: 3rem 2.5rem;
+            text-align: center;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-tagline {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            margin-bottom: 1.8rem;
+            letter-spacing: 2px;
+        }
+
+        .hero-bio {
+            font-size: 1rem;
+            line-height: 1.75;
+            color: var(--text);
+            margin-bottom: 1.8rem;
+        }
+
+        .hero-bio strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .read-bio-btn {
+            display: inline-block;
+            padding: 0.75rem 2.5rem;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            margin-bottom: 2rem;
+        }
+
+        .read-bio-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* SOCIAL ICONS */
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .social-links a img {
+            width: 48px;
+            height: 48px;
+            display: block;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.15);
+        }
+
+        /* SECTION TITLE */
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            text-align: center;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+        }
+
+        /* TEXT CARDS (About / Contact) */
+        .text-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+
+        .text-card p {
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .text-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin: 1.5rem 0 0.8rem 0;
+        }
+
+        .press-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .press-list li {
+            padding: 0.6rem 0 0.6rem 1.4rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+            position: relative;
+        }
+
+        .press-list li:before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-light);
+        }
+
+        .press-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* PRESS QUOTES */
+        .press-heading {
+            margin-top: 3rem;
+        }
+
+        .press-quote {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .press-quote p {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            font-style: italic;
+            color: var(--text);
+            margin-bottom: 1.25rem;
+        }
+
+        .press-attrib {
+            font-style: normal;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        .press-attrib span {
+            display: block;
+            font-weight: 400;
+            font-style: normal;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            letter-spacing: 0.3px;
+            margin-top: 0.2rem;
+        }
+
+        .contact-email {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* TRACK ROWS WITH PLAY BUTTONS */
+        .tracklist-compact li {
+            grid-template-columns: 32px 1fr 50px !important;
+            align-items: center;
+        }
+
+        .track-play {
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            width: 26px;
+            height: 26px;
+            font-size: 0.6rem;
+            line-height: 1;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .track-play:hover {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+
+        .tracklist-compact li.playing .track-name {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .tracklist-compact li.playing .track-play {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+
+        .track-name {
+            text-align: left;
+        }
+
+        /* STICKY PLAYER BAR */
+        #player-bar {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-top: 1px solid var(--border);
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.07);
+            z-index: 200;
+            transform: translateY(110%);
+            transition: transform 0.35s ease;
+            padding: 0.75rem 0;
+        }
+
+        #player-bar.visible {
+            transform: translateY(0);
+        }
+
+        .player-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 48px auto 1fr auto;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        #player-art {
+            width: 48px;
+            height: 48px;
+            border-radius: 4px;
+            object-fit: cover;
+            background: var(--bg);
+        }
+
+        #player-toggle {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        #player-toggle:hover {
+            background: var(--secondary);
+        }
+
+        .player-meta {
+            min-width: 0;
+        }
+
+        #player-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 0.3rem;
+        }
+
+        .player-scrub {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        #player-seek {
+            flex: 1;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 4px;
+            border-radius: 2px;
+            background: var(--border);
+            cursor: pointer;
+            min-width: 0;
+        }
+
+        #player-seek::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+        }
+
+        #player-seek::-moz-range-thumb {
+            width: 12px;
+            height: 12px;
+            border: none;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+        }
+
+        #player-time {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            white-space: nowrap;
+            font-variant-numeric: tabular-nums;
+        }
+
+        #player-close {
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            line-height: 1;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: 0 0.3rem;
+        }
+
+        #player-close:hover {
+            color: var(--primary);
+        }
+
+        .preview-note {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+
+        /* MUSIC SECTION */
+        .section {
+            padding: 4rem 0;
+            background: transparent;
+        }
+
+        .singles-heading {
+            margin-top: 4rem;
+        }
+
+        .album-player-simple {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .album-player-inner {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .album-art img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .album-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+
+        .album-artist {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .album-desc {
+            font-size: 0.95rem;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .pricing-info {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            padding: 0.75rem;
+            background: var(--bg);
+            border-radius: 4px;
+        }
+
+        .price-tag {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-play {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.65rem 1.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-play:hover {
+            background: var(--primary);
+        }
+
+        .btn-buy-album {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.65rem 1.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-buy-album:hover {
+            background: var(--secondary);
+        }
+
+        .tracklist-compact {
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+        }
+
+        .tracklist-compact summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary);
+            padding: 0.5rem;
+        }
+
+        .tracklist-compact ol {
+            list-style: none;
+            padding: 1rem 0 0 0;
+            margin: 0;
+        }
+
+        .tracklist-compact li {
+            display: grid;
+            grid-template-columns: 1fr 50px;
+            gap: 1rem;
+            align-items: center;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            color: var(--text);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .buy-track-mini {
+            background: none;
+            border: 1px solid var(--text-light);
+            color: var(--text-light);
+            padding: 0.3rem 0.8rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .buy-track-mini:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* MEDIA / VIDEO */
+        .video-feature {
+            margin-bottom: 2.5rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .video-item {
+            min-width: 0;
+        }
+
+        .video-embed {
+            display: block;
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            padding: 0;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            background: #1a1a1a;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .video-thumb {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center center;
+            transition: transform 0.4s;
+        }
+
+        .video-embed:hover .video-thumb {
+            transform: scale(1.03);
+        }
+
+        .video-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+        }
+
+        .video-play::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 54%;
+            transform: translate(-50%, -50%);
+            border-style: solid;
+            border-width: 11px 0 11px 18px;
+            border-color: transparent transparent transparent var(--primary);
+        }
+
+        .video-embed:hover .video-play {
+            background: #fff;
+            transform: translate(-50%, -50%) scale(1.08);
+        }
+
+        .video-embed iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-caption {
+            padding: 1rem 0.2rem 0 0.2rem;
+        }
+
+        .video-caption h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+
+        .video-caption p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .video-feature .video-caption h3 {
+            font-size: 1.5rem;
+        }
+
+        .media-note {
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-style: italic;
+            margin-top: 2.5rem;
+        }
+
+        /* PHOTOS */
+        .photo-heading {
+            margin-top: 4rem;
+        }
+
+        .photo-feature {
+            margin-bottom: 1.5rem;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .photo-grid img,
+        .photo-feature img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            background: var(--bg);
+        }
+
+        .photo-feature img {
+            /* No aspect-ratio and height auto: the photograph is shown whole.
+               Forcing a letterbox crop here cut the performer out of frame. */
+            height: auto;
+        }
+
+        .photo-grid img {
+            aspect-ratio: 4 / 3;
+        }
+
+        .photo-grid img.photo-wide {
+            grid-column: 1 / -1;
+            /* Uncropped: a crop here clipped the photographer's credit
+               out of the bottom-right corner. */
+            aspect-ratio: auto;
+            height: auto;
+        }
+
+        .photo-credit {
+            text-align: center;
+            font-size: 0.82rem;
+            color: var(--text-light);
+            margin-top: 1rem;
+        }
+
+        /* SUBSCRIBE */
+        .subscribe-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .subscribe-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.6rem;
+            font-weight: 600;
+        }
+
+        .subscribe-intro {
+            font-size: 1rem;
+            color: var(--text);
+            line-height: 1.7;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+
+        .subscribe-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            gap: 0.75rem;
+            max-width: 680px;
+            margin: 1.8rem auto 0;
+        }
+
+        .subscribe-form input {
+            font-family: inherit;
+            /* 16px minimum: iOS Safari zooms the whole page in on focus
+               for anything smaller, which breaks the layout mid-signup. */
+            font-size: 1rem;
+            padding: 0.8rem 1rem;
+            color: var(--text);
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            min-width: 0;
+            -webkit-appearance: none;
+            appearance: none;
+            transition: border-color 0.3s;
+        }
+
+        .subscribe-form input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .subscribe-form input::placeholder {
+            color: var(--text-light);
+        }
+
+        .subscribe-btn {
+            font-family: inherit;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 0.8rem 2rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.3s;
+        }
+
+        .subscribe-btn:hover {
+            background: var(--secondary);
+        }
+
+        .subscribe-btn[disabled] {
+            opacity: 0.55;
+            cursor: default;
+        }
+
+        .subscribe-note {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            margin-top: 1rem;
+        }
+
+        .subscribe-msg {
+            margin-top: 1.2rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            min-height: 1.4em;
+        }
+
+        .subscribe-msg.ok {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .subscribe-msg.err {
+            color: #a33;
+        }
+
+        /* FOOTER */
+        footer {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 768px) {
+            body::before {
+                background-size: 150% auto;
+                background-position: center center;
+            }
+
+            .player-inner {
+                grid-template-columns: 40px auto 1fr auto;
+                gap: 0.7rem;
+                padding: 0 12px;
+            }
+
+            #player-art {
+                width: 40px;
+                height: 40px;
+            }
+
+            #player-toggle {
+                width: 36px;
+                height: 36px;
+            }
+
+            #player-title {
+                font-size: 0.85rem;
+            }
+
+            #player-time {
+                font-size: 0.7rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1.2rem 0;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-portrait {
+                height: 420px;
+                min-height: 0;
+            }
+
+            .hero-portrait img.slide-1 {
+                object-position: 62% 28%;
+            }
+
+            .hero-portrait img.slide-2 {
+                object-position: center 22%;
+            }
+
+            .hero-text {
+                padding: 2.5rem 1.2rem;
+            }
+            .hero-title {
+                font-size: 2.1rem;
+            }
+
+            .social-links {
+                gap: 1.1rem;
+                margin-top: 2rem;
+            }
+
+            .social-links a img {
+                width: 38px;
+                height: 38px;
+            }
+
+            .read-bio-btn {
+                padding: 0.75rem 1.2rem;
+                font-size: 0.85rem;
+            }
+
+            .press-quote {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .text-card {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .nav-links {
+                gap: 1.2rem;
+                font-size: 0.9rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .album-player-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn-play, .btn-buy-album {
+                width: 100%;
+            }
+
+            .subscribe-card {
+                padding: 2rem 1.2rem;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .photo-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .video-play {
+                width: 52px;
+                height: 52px;
+            }
+
+            .video-play::after {
+                border-width: 9px 0 9px 15px;
+            }
+
+            .video-feature .video-caption h3 {
+                font-size: 1.3rem;
+            }
+
+            .subscribe-form {
+                grid-template-columns: 1fr;
+                gap: 0.65rem;
+            }
+
+            .subscribe-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">Luca Mundaca</a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#music">Music</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#media">Media</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+            <div class="hero-portrait">
+                <img src="luca-portrait.jpg" alt="Luca Mundaca" class="slide-1">
+                <img src="luca-portrait-2.jpg" alt="Luca Mundaca performing live" class="slide-2">
+            </div>
+
+            <div class="hero-text">
+            <h1 class="hero-title">Luca Mundaca</h1>
+            <p class="hero-tagline">Elegant · Sophisticated · Timeless</p>
+            
+            <p class="hero-bio">
+                Luca Mundaca is a <strong>Bossa Nova singer, MPB artist, and music composer</strong> known for her velvety voice, refined guitar work, and Portuguese-language songs. Blending <strong>Bossa Nova, Brazilian jazz, lounge music, and MPB</strong>, she creates a modern yet timeless sound that transports listeners to the heart of Brazilian music.
+            </p>
+
+            <a href="#about" class="read-bio-btn">READ FULL BIOGRAPHY</a>
+
+            <div class="social-links">
+                <a href="https://open.spotify.com/artist/7u3L4UZO9IXBElwdUyvAxl" target="_blank" title="Spotify">
+                    <img src="Spotify-Logo--Streamline-Plump-Remix.png" alt="Spotify">
+                </a>
+                <a href="https://music.apple.com/us/artist/luca-mundaca/81994283" target="_blank" title="Apple Music">
+                    <img src="Music-Note-2--Streamline-Plump-Remix.png" alt="Apple Music">
+                </a>
+                <a href="https://www.youtube.com/mundacamusic" target="_blank" title="YouTube">
+                    <img src="Youtube-Logo--Streamline-Plump-Remix.png" alt="YouTube">
+                </a>
+                <a href="https://instagram.com/lucamundaca" target="_blank" title="Instagram">
+                    <img src="Instagram-Logo--Streamline-Plump-Remix.png" alt="Instagram">
+                </a>
+                <a href="https://www.amazon.com/music/player/artists/B000ZOCHGQ/luca-mundaca" target="_blank" title="Amazon Music">
+                    <img src="Amazon-Logo--Streamline-Plump-Remix.png" alt="Amazon Music">
+                </a>
+                <a href="https://facebook.com/lucamundaca" target="_blank" title="Facebook">
+                    <img src="Facebook-Logo-2--Streamline-Plump-Remix.png" alt="Facebook">
+                </a>
+                <a href="mailto:luca@lucamundaca.com" title="Email">
+                    <img src="Mention-Account-Username-Email-Address--Streamline-Plump-Remix.png" alt="Email">
+                </a>
+            </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MUSIC SECTION -->
+    <section id="music" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Music</h2>
+            
+            <!-- DAY BY DAY -->
+            <div class="album-player-simple">
+                <div class="album-player-inner">
+                    <div class="album-art">
+                        <img src="day-by-day-cover.jpg" alt="Day By Day Album">
+                    </div>
+                    
+                    <div class="album-info">
+                        <h3 class="album-title">Day By Day</h3>
+                        <p class="album-artist">by Luca Mundaca</p>
+                        <p class="album-desc">A refined blend of Bossa Nova, MPB, and Brazilian jazz with elegant Portuguese vocals.</p>
+                        <div class="pricing-info">
+                            <p>Album: <span class="price-tag">$10</span> | Tracks: <span class="price-tag">$2</span></p>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn-play" data-src="audio/day-by-day-01.mp3" data-title="Não Se Apavore" data-art="day-by-day-cover.jpg">▶ Play</button>
+                            <button class="btn-buy-album" onclick="alert('Buy Album - $10')">Buy Album</button>
+                        </div>
+                        <div class="tracklist-compact">
+                            <details>
+                                <summary>10 Tracks</summary>
+                                <ol>
+                                    <li data-src="audio/day-by-day-01.mp3" data-title="Não Se Apavore" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Não Se Apavore">&#9654;</button><span class="track-name">Não Se Apavore</span><button class="buy-track-mini" onclick="alert('Buy: Não Se Apavore - $2')">$2</button></li>
+                                    <li data-src="audio/day-by-day-02.mp3" data-title="Cidades" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Cidades">&#9654;</button><span class="track-name">Cidades</span><button class="buy-track-mini" onclick="alert('Buy: Cidades - $2')">$2</button></li>
+                                    <li data-src="audio/day-by-day-03.mp3" data-title="Day By Day" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Day By Day">&#9654;</button><span class="track-name">Day By Day</span><button class="buy-track-mini" onclick="alert('Buy: Day By Day - $2')">$2</button></li>
+                                    <li data-src="audio/day-by-day-04.mp3" data-title="Minha Flor" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Minha Flor">&#9654;</button><span class="track-name">Minha Flor</span><button class="buy-track-mini" onclick="alert('Buy: Minha Flor - $2')">$2</button></li>
+                                    <li data-src="audio/day-by-day-05.mp3" data-title="Há Dias" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Há Dias">&#9654;</button><span class="track-name">Há Dias</span><button class="buy-track-mini" onclick="alert('Buy: Há Dias - $2')">$2</button></li>
+                                    <li data-src="audio/day-by-day-06.mp3" data-title="Deixa" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Deixa">&#9654;</button><span class="track-name">Deixa</span><button class="buy-track-mini" onclick="alert('Buy: Deixa - $2')">$2</button></li>
+                                    <li data-src="audio/day-by-day-07.mp3" data-title="Berenguendem" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Berenguendem">&#9654;</button><span class="track-name">Berenguendem</span><button class="buy-track-mini" onclick="alert('Buy: Berenguendem - $2')">$2</button></li>
+                                    <li data-src="audio/day-by-day-08.mp3" data-title="Me Faz Bem" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Me Faz Bem">&#9654;</button><span class="track-name">Me Faz Bem</span><button class="buy-track-mini" onclick="alert('Buy: Me Faz Bem - $2')">$2</button></li>
+                                    <li data-src="audio/day-by-day-09.mp3" data-title="Quase Nada" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Quase Nada">&#9654;</button><span class="track-name">Quase Nada</span><button class="buy-track-mini" onclick="alert('Buy: Quase Nada - $2')">$2</button></li>
+                                    <li data-src="audio/day-by-day-10.mp3" data-title="Minha Flor (My Love)" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Minha Flor (My Love)">&#9654;</button><span class="track-name">Minha Flor (My Love)</span><button class="buy-track-mini" onclick="alert('Buy: Minha Flor (My Love) - $2')">$2</button></li>
+                                </ol>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRIMEIRO -->
+            <div class="album-player-simple">
+                <div class="album-player-inner">
+                    <div class="album-art">
+                        <img src="primeiro-cover.jpg" alt="Primeiro Album">
+                    </div>
+                    
+                    <div class="album-info">
+                        <h3 class="album-title">Primeiro</h3>
+                        <p class="album-artist">by Luca Mundaca</p>
+                        <p class="album-desc">A warm, intimate album rooted in Bossa Nova traditions with modern lounge elements.</p>
+                        <div class="pricing-info">
+                            <p>Album: <span class="price-tag">$10</span> | Tracks: <span class="price-tag">$2</span></p>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn-play" data-src="audio/primeiro-01.mp3" data-title="Não Me Faz Mal" data-art="primeiro-cover.jpg">▶ Play</button>
+                            <button class="btn-buy-album" onclick="alert('Buy Album - $10')">Buy Album</button>
+                        </div>
+                        <div class="tracklist-compact">
+                            <details>
+                                <summary>11 Tracks</summary>
+                                <ol>
+                                    <li data-src="audio/primeiro-01.mp3" data-title="Não Me Faz Mal" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Não Me Faz Mal">&#9654;</button><span class="track-name">Não Me Faz Mal</span><button class="buy-track-mini" onclick="alert('Buy: Não Me Faz Mal - $2')">$2</button></li>
+                                    <li data-src="audio/primeiro-02.mp3" data-title="O Meu Lugar" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play O Meu Lugar">&#9654;</button><span class="track-name">O Meu Lugar</span><button class="buy-track-mini" onclick="alert('Buy: O Meu Lugar - $2')">$2</button></li>
+                                    <li data-src="audio/primeiro-03.mp3" data-title="Tom Maior" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Tom Maior">&#9654;</button><span class="track-name">Tom Maior</span><button class="buy-track-mini" onclick="alert('Buy: Tom Maior - $2')">$2</button></li>
+                                    <li data-src="audio/primeiro-04.mp3" data-title="Me Dobra" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Me Dobra">&#9654;</button><span class="track-name">Me Dobra</span><button class="buy-track-mini" onclick="alert('Buy: Me Dobra - $2')">$2</button></li>
+                                    <li data-src="audio/primeiro-05.mp3" data-title="Zulmira" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Zulmira">&#9654;</button><span class="track-name">Zulmira</span><button class="buy-track-mini" onclick="alert('Buy: Zulmira - $2')">$2</button></li>
+                                    <li data-src="audio/primeiro-06.mp3" data-title="Reflexo" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Reflexo">&#9654;</button><span class="track-name">Reflexo</span><button class="buy-track-mini" onclick="alert('Buy: Reflexo - $2')">$2</button></li>
+                                    <li data-src="audio/primeiro-07.mp3" data-title="Maneira de Amar" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Maneira de Amar">&#9654;</button><span class="track-name">Maneira de Amar</span><button class="buy-track-mini" onclick="alert('Buy: Maneira de Amar - $2')">$2</button></li>
+                                    <li data-src="audio/primeiro-08.mp3" data-title="Nosso Jardim" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Nosso Jardim">&#9654;</button><span class="track-name">Nosso Jardim</span><button class="buy-track-mini" onclick="alert('Buy: Nosso Jardim - $2')">$2</button></li>
+                                    <li data-src="audio/primeiro-09.mp3" data-title="Iara" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Iara">&#9654;</button><span class="track-name">Iara</span><button class="buy-track-mini" onclick="alert('Buy: Iara - $2')">$2</button></li>
+                                    <li data-src="audio/primeiro-10.mp3" data-title="Gotas de Cor" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Gotas de Cor">&#9654;</button><span class="track-name">Gotas de Cor</span><button class="buy-track-mini" onclick="alert('Buy: Gotas de Cor - $2')">$2</button></li>
+                                    <li data-src="audio/primeiro-11.mp3" data-title="Clau" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Clau">&#9654;</button><span class="track-name">Clau</span><button class="buy-track-mini" onclick="alert('Buy: Clau - $2')">$2</button></li>
+                                </ol>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title singles-heading">Singles</h2>
+
+            <!-- MOMENTO -->
+            <div class="album-player-simple">
+                <div class="album-player-inner">
+                    <div class="album-art">
+                        <img src="momento-cover.jpg" alt="Momento Single">
+                    </div>
+
+                    <div class="album-info">
+                        <h3 class="album-title">Momento</h3>
+                        <p class="album-artist">by Luca Mundaca</p>
+                        <p class="album-desc">A tender, unhurried single built on warm nylon-string guitar and intimate Portuguese vocals.</p>
+                        <div class="pricing-info">
+                            <p>Single: <span class="price-tag">$2</span> &nbsp;·&nbsp; 4:28</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn-play" data-src="audio/momento.mp3" data-title="Momento" data-art="momento-cover.jpg">▶ Play</button>
+                            <button class="btn-buy-album" onclick="alert('Buy: Momento - $2')">Buy Single</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HÁ DIAS (REMIX) -->
+            <div class="album-player-simple">
+                <div class="album-player-inner">
+                    <div class="album-art">
+                        <img src="ha-dias-remix-cover.jpg" alt="Há Dias Remix Single">
+                    </div>
+
+                    <div class="album-info">
+                        <h3 class="album-title">Há Dias (Remix)</h3>
+                        <p class="album-artist">by Luca Mundaca</p>
+                        <p class="album-desc">A contemporary lounge reworking of the <em>Há Dias</em> track, with a deeper groove beneath the original vocal.</p>
+                        <div class="pricing-info">
+                            <p>Single: <span class="price-tag">$2</span> &nbsp;·&nbsp; 4:08</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn-play" data-src="audio/ha-dias-remix.mp3" data-title="Há Dias (Remix)" data-art="ha-dias-remix-cover.jpg">▶ Play</button>
+                            <button class="btn-buy-album" onclick="alert('Buy: Há Dias (Remix) - $2')">Buy Single</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">Biography</h2>
+            <div class="text-card">
+                <p>Luca Mundaca is a Bossa Nova singer, MPB artist, and music composer known for her elegant voice and expressive guitar work. Singing in Portuguese, she creates a refined fusion of Bossa Nova, contemporary lounge, Brazilian jazz, and MPB, shaping a sound that is both timeless and modern. Her music draws deeply from the rich traditions of Brazilian rhythm and harmony, blending classic Bossa Nova sensibilities with global influences to define her signature style.</p>
+
+                <p>Her acclaimed albums <em>Day by Day</em> and <em>Primeiro</em> highlight her velvety vocals, lyrical depth, and intricate guitar arrangements, each offering a sophisticated blend of Bossa Nova traditions and jazz-infused improvisation. Luca's compositions evoke the gentle sway of Rio's seaside breeze, the warm acoustic textures reminiscent of João Gilberto, and the contemporary lounge aesthetic that invites relaxed, intimate listening.</p>
+
+                <p>Luca's artistry has earned international recognition: she is a winner of the Independent Music Award (World Fusion category), placed third in the International Songwriting Competition (World Music category), and has been featured on global Putumayo World Music compilations, including <em>Brazilian Lounge</em> and <em>Women of the World: Acoustic</em>. Her music has also been included in film and television, spanning Hollywood releases to Brazilian telenovelas.</p>
+
+                <p>For listeners drawn to Bossa Nova, Brazilian jazz, lounge music, and contemporary MPB, Luca Mundaca offers an exquisite musical experience. Stream her on Spotify, explore her music across all major platforms, and let her voice transport you to the heart of Brazil—where melody, rhythm, and elegance meet.</p>
+
+                <h3>Highlights</h3>
+                <ul class="press-list">
+                    <li>Independent Music Award winner — World Fusion category</li>
+                    <li>Third place — International Songwriting Competition, World Music category</li>
+                    <li>Featured on Putumayo World Music compilations: <em>Brazilian Lounge</em>, <em>Women of the World: Acoustic</em></li>
+                    <li>Music featured in Hollywood films and Brazilian telenovelas</li>
+                </ul>
+            </div>
+
+            <h2 class="section-title press-heading">Press</h2>
+
+            <blockquote class="press-quote">
+                <p>Luca Mundaca is a gifted young singer and songwriter. Luca's music is a glorious blend of her native Brazil with a touch of downtown New York. She mines the deep melodic roots of her country's heritage, creating musical gems that she polishes with the lightest of touches. A talent to watch.</p>
+                <footer class="press-attrib">Tom Evered<span>General Manager &amp; Senior Vice President, Marketing (Jazz &amp; Classical), EMI Music</span></footer>
+            </blockquote>
+
+            <blockquote class="press-quote">
+                <p>Luca Mundaca is a singer and songwriter whose work I have been aware of since she arrived in NYC. Her abilities are unlimited; she has a stunning voice of great intimacy and emotion, and her songwriting is first rate. It is rare to find in an artist both the capacity to write brilliant melodies and profound lyrics, and to then perform them at such a high level of musicianship. She simply has it all.</p>
+                <footer class="press-attrib">Seth Rothstein<span>Former VP Marketing, Sony Legacy</span></footer>
+            </blockquote>
+
+            <blockquote class="press-quote">
+                <p>Luca Mundaca is a classic example of a talent deserving wider recognition. Blessed with a sweetly engaging sound, impressive musicality and the rhythmic passion of her Brazilian roots, she is a talent whose song and singing should be far more widely heard.</p>
+                <footer class="press-attrib">Don Heckman<span>Critic, Los Angeles Times</span></footer>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- MEDIA SECTION -->
+    <section id="media" class="section">
+        <div class="container">
+            <h2 class="section-title">Media</h2>
+
+            <div class="video-feature">
+                <button class="video-embed" type="button"
+                        data-id="BflAjIvhbFA" aria-label="Play Só Eu, live with the CYO Orchestra">
+                    <span class="video-thumb"></span>
+                    <span class="video-play"></span>
+                </button>
+                <div class="video-caption">
+                    <h3>Só Eu</h3>
+                    <p>Live with the CYO Orchestra. Unreleased.</p>
+                </div>
+            </div>
+
+            <div class="video-grid">
+                <div class="video-item">
+                    <button class="video-embed" type="button"
+                            data-id="UlVNSlOYBRc" aria-label="Play Samba de Coração, live performance">
+                        <span class="video-thumb"></span>
+                        <span class="video-play"></span>
+                    </button>
+                    <div class="video-caption">
+                        <h3>Samba de Coração</h3>
+                        <p>Live performance. Unreleased.</p>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <button class="video-embed" type="button"
+                            data-id="9JySYm0dEnM" aria-label="Play Há Dias, live performance">
+                        <span class="video-thumb"></span>
+                        <span class="video-play"></span>
+                    </button>
+                    <div class="video-caption">
+                        <h3>Há Dias</h3>
+                        <p>Live performance.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="media-note">Some of these songs haven't been released yet. Join the mailing list below and you'll hear them first.</p>
+
+            <h2 class="section-title photo-heading">Photographs</h2>
+
+            <div class="photo-feature">
+                <img src="live-orchestra-wide.jpg" alt="Luca Mundaca performing with the CYO Orchestra" loading="lazy">
+            </div>
+
+            <div class="photo-grid">
+                <img src="live-orchestra-conductor.jpg" alt="Luca Mundaca singing with the orchestra and conductor" loading="lazy">
+                <img src="live-closeup.jpg" alt="Luca Mundaca singing and playing guitar on stage" loading="lazy">
+                <img src="portrait-studio.jpg" alt="Portrait of Luca Mundaca" loading="lazy">
+                <img src="portrait-guitar.jpg" alt="Luca Mundaca with her archtop guitar" loading="lazy">
+                <img class="photo-wide" src="live-club.jpg" alt="Luca Mundaca performing live, photograph by Jack Valancy" loading="lazy">
+            </div>
+
+            <p class="photo-credit">Live photography by Jack Valancy.</p>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="text-card">
+                <p>For booking, licensing, and press inquiries:</p>
+                <p><a href="mailto:luca@lucamundaca.com" class="contact-email">luca@lucamundaca.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUBSCRIBE SECTION -->
+    <section id="subscribe" class="section">
+        <div class="container">
+            <div class="subscribe-card">
+                <h3>Stay in touch</h3>
+                <p class="subscribe-intro">Be the first to hear new songs, and receive occasional notes about the music, the recordings, and where I'm playing.</p>
+
+                <form class="subscribe-form" id="subscribe-form"
+                      action="https://app.kit.com/forms/9786126/subscriptions" method="post">
+                    <input type="text" name="fields[first_name]" placeholder="First name"
+                           autocomplete="given-name" aria-label="First name">
+                    <input type="email" name="email_address" placeholder="Email address"
+                           autocomplete="email" required aria-label="Email address">
+                    <button type="submit" class="subscribe-btn">Subscribe</button>
+                </form>
+
+                <p class="subscribe-note">No spam. Unsubscribe anytime.</p>
+                <p class="subscribe-msg" id="subscribe-msg" role="status" aria-live="polite"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Luca Mundaca. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- STICKY AUDIO PLAYER -->
+    <div id="player-bar" aria-live="polite">
+        <div class="player-inner">
+            <img id="player-art" src="day-by-day-cover.jpg" alt="">
+            <button id="player-toggle" aria-label="Play or pause">&#10074;&#10074;</button>
+            <div class="player-meta">
+                <div id="player-title">—</div>
+                <div class="player-scrub">
+                    <input id="player-seek" type="range" value="0" min="0" max="100" step="0.1" aria-label="Seek">
+                    <span id="player-time">0:00 / 0:00</span>
+                </div>
+            </div>
+            <button id="player-close" aria-label="Close player">&times;</button>
+        </div>
+    </div>
+
+    <audio id="audio-el" preload="none"></audio>
+
+    <script>
+    (function () {
+        var audio   = document.getElementById('audio-el');
+        var bar     = document.getElementById('player-bar');
+        var toggle  = document.getElementById('player-toggle');
+        var titleEl = document.getElementById('player-title');
+        var artEl   = document.getElementById('player-art');
+        var seek    = document.getElementById('player-seek');
+        var timeEl  = document.getElementById('player-time');
+        var closeBt = document.getElementById('player-close');
+
+        var PLAY = '\u25B6', PAUSE = '\u2758\u2758';
+        var currentRow = null;
+        var seeking = false;
+
+        function fmt(s) {
+            if (!isFinite(s) || s < 0) s = 0;
+            var m = Math.floor(s / 60), r = Math.floor(s % 60);
+            return m + ':' + (r < 10 ? '0' : '') + r;
+        }
+
+        function clearRow() {
+            if (currentRow) currentRow.classList.remove('playing');
+            currentRow = null;
+        }
+
+        function load(src, title, art, row) {
+            if (audio.getAttribute('src') === src) {
+                audio.paused ? audio.play() : audio.pause();
+                return;
+            }
+            clearRow();
+            audio.setAttribute('src', src);
+            titleEl.textContent = title || '\u2014';
+            if (art) artEl.setAttribute('src', art);
+            if (row) { row.classList.add('playing'); currentRow = row; }
+            bar.classList.add('visible');
+            audio.play().catch(function () {
+                titleEl.textContent = 'Preview unavailable \u2014 ' + (title || '');
+            });
+        }
+
+        // per-track play buttons
+        document.querySelectorAll('.tracklist-compact li[data-src]').forEach(function (li) {
+            var btn = li.querySelector('.track-play');
+            if (!btn) return;
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                load(li.dataset.src, li.dataset.title, li.dataset.art, li);
+            });
+        });
+
+        // album + single play buttons
+        document.querySelectorAll('.btn-play[data-src]').forEach(function (btn) {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                load(btn.dataset.src, btn.dataset.title, btn.dataset.art, null);
+            });
+        });
+
+        toggle.addEventListener('click', function () {
+            if (!audio.getAttribute('src')) return;
+            audio.paused ? audio.play() : audio.pause();
+        });
+
+        closeBt.addEventListener('click', function () {
+            audio.pause();
+            audio.removeAttribute('src');
+            audio.load();
+            clearRow();
+            bar.classList.remove('visible');
+        });
+
+        audio.addEventListener('play',  function () { toggle.innerHTML = PAUSE; });
+        audio.addEventListener('pause', function () { toggle.innerHTML = PLAY; });
+
+        audio.addEventListener('timeupdate', function () {
+            if (seeking || !audio.duration) return;
+            seek.value = (audio.currentTime / audio.duration) * 100;
+            timeEl.textContent = fmt(audio.currentTime) + ' / ' + fmt(audio.duration);
+        });
+
+        audio.addEventListener('loadedmetadata', function () {
+            timeEl.textContent = '0:00 / ' + fmt(audio.duration);
+        });
+
+        audio.addEventListener('ended', function () {
+            clearRow();
+            seek.value = 0;
+            toggle.innerHTML = PLAY;
+        });
+
+        seek.addEventListener('input',  function () { seeking = true; });
+        seek.addEventListener('change', function () {
+            if (audio.duration) audio.currentTime = (seek.value / 100) * audio.duration;
+            seeking = false;
+        });
+    })();
+    </script>
+
+    <script>
+    /* Click-to-load video. Only a thumbnail loads with the page; YouTube's
+       player (and its ~1.5MB of scripts) arrives only if someone presses play. */
+    (function () {
+        var embeds = document.querySelectorAll('.video-embed[data-id]');
+
+        Array.prototype.forEach.call(embeds, function (btn) {
+            var id = btn.getAttribute('data-id');
+            var thumb = btn.querySelector('.video-thumb');
+
+            if (thumb) {
+                thumb.style.backgroundImage =
+                    "url('https://img.youtube.com/vi/" + id + "/hqdefault.jpg')";
+            }
+
+            btn.addEventListener('click', function () {
+                if (btn.querySelector('iframe')) return;
+
+                /* Stop the audio player so the two don't play over each other. */
+                var audio = document.getElementById('audio-el');
+                if (audio && !audio.paused) audio.pause();
+
+                var frame = document.createElement('iframe');
+                frame.setAttribute('src',
+                    'https://www.youtube-nocookie.com/embed/' + id +
+                    '?autoplay=1&rel=0&modestbranding=1&playsinline=1');
+                frame.setAttribute('title', btn.getAttribute('aria-label') || 'Video');
+                /* YouTube rejects embeds that arrive without referrer info
+                   (Error 153). Some browsers and privacy extensions strip it
+                   by default, so state the policy explicitly. */
+                frame.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+                frame.setAttribute('allow',
+                    'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                frame.setAttribute('allowfullscreen', '');
+                btn.innerHTML = '';
+                btn.appendChild(frame);
+            });
+        });
+    })();
+    </script>
+
+    <script>
+    /* Subscribe form -> Kit, without leaving the page. */
+    (function () {
+        var form = document.getElementById('subscribe-form');
+        var msg  = document.getElementById('subscribe-msg');
+        if (!form || !msg) return;
+
+        var btn = form.querySelector('.subscribe-btn');
+        var done = false;
+
+        function say(text, kind) {
+            msg.textContent = text;
+            msg.className = 'subscribe-msg' + (kind ? ' ' + kind : '');
+        }
+
+        function succeed() {
+            if (done) return;
+            done = true;
+            say('Thank you \u2014 please check your email to confirm your subscription.', 'ok');
+            form.style.display = 'none';
+        }
+
+        function reset() {
+            btn.disabled = false;
+            btn.textContent = 'Subscribe';
+        }
+
+        /* If the browser blocks the cross-origin request, fall back to a
+           normal form post aimed at a hidden frame. The signup still lands
+           in Kit and the visitor still stays on the page; we just can't
+           read the response back, so we report success optimistically. */
+        function fallbackSubmit() {
+            var frame = document.getElementById('subscribe-frame');
+            if (!frame) {
+                frame = document.createElement('iframe');
+                frame.id = 'subscribe-frame';
+                frame.name = 'subscribe-frame';
+                frame.style.display = 'none';
+                document.body.appendChild(frame);
+            }
+            form.target = 'subscribe-frame';
+            HTMLFormElement.prototype.submit.call(form);
+            setTimeout(succeed, 600);
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (done) return;
+
+            var email = form.querySelector('input[name="email_address"]');
+            if (!email || !email.value.trim()) {
+                say('Please enter your email address.', 'err');
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = 'Sending\u2026';
+            say('');
+
+            if (!window.fetch) { fallbackSubmit(); return; }
+
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            }).then(function (res) {
+                if (res.ok) { succeed(); }
+                else {
+                    reset();
+                    say('Something went wrong. Please try again, or email luca@lucamundaca.com.', 'err');
+                }
+            }).catch(function () {
+                fallbackSubmit();
+            });
+        });
+    })();
+    </script>
+
+</body>
+</html>
