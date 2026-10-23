@@ -468,6 +468,27 @@
             border-color: var(--primary);
         }
 
+        .track-buy {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            padding: 0.3rem 0;
+            border: 1px solid var(--primary);
+            border-radius: 4px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+            text-align: center;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .track-buy:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
         .tracklist-compact li.playing .track-name {
             font-weight: 600;
             color: var(--primary);
@@ -1288,16 +1309,16 @@
                             <details>
                                 <summary>10 Tracks</summary>
                                 <ol>
-                                    <li data-src="audio/day-by-day-01.mp3" data-title="Não Se Apavore" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Não Se Apavore">&#9654;</button><span class="track-name">Não Se Apavore</span></li>
-                                    <li data-src="audio/day-by-day-02.mp3" data-title="Cidades" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Cidades">&#9654;</button><span class="track-name">Cidades</span></li>
-                                    <li data-src="audio/day-by-day-03.mp3" data-title="Day By Day" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Day By Day">&#9654;</button><span class="track-name">Day By Day</span></li>
-                                    <li data-src="audio/day-by-day-04.mp3" data-title="Minha Flor" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Minha Flor">&#9654;</button><span class="track-name">Minha Flor</span></li>
-                                    <li data-src="audio/day-by-day-05.mp3" data-title="Há Dias" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Há Dias">&#9654;</button><span class="track-name">Há Dias</span></li>
-                                    <li data-src="audio/day-by-day-06.mp3" data-title="Deixa" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Deixa">&#9654;</button><span class="track-name">Deixa</span></li>
-                                    <li data-src="audio/day-by-day-07.mp3" data-title="Berenguendem" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Berenguendem">&#9654;</button><span class="track-name">Berenguendem</span></li>
-                                    <li data-src="audio/day-by-day-08.mp3" data-title="Me Faz Bem" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Me Faz Bem">&#9654;</button><span class="track-name">Me Faz Bem</span></li>
-                                    <li data-src="audio/day-by-day-09.mp3" data-title="Quase Nada" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Quase Nada">&#9654;</button><span class="track-name">Quase Nada</span></li>
-                                    <li data-src="audio/day-by-day-10.mp3" data-title="Minha Flor (My Love)" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Minha Flor (My Love)">&#9654;</button><span class="track-name">Minha Flor (My Love)</span></li>
+                                    <li data-src="audio/day-by-day-01.mp3" data-title="Não Se Apavore" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Não Se Apavore">&#9654;</button><span class="track-name">Não Se Apavore</span><a class="track-buy" href="#" data-track="day-by-day-01" title="Buy this track for $2">$2</a></li>
+                                    <li data-src="audio/day-by-day-02.mp3" data-title="Cidades" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Cidades">&#9654;</button><span class="track-name">Cidades</span><a class="track-buy" href="#" data-track="day-by-day-02" title="Buy this track for $2">$2</a></li>
+                                    <li data-src="audio/day-by-day-03.mp3" data-title="Day By Day" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Day By Day">&#9654;</button><span class="track-name">Day By Day</span><a class="track-buy" href="#" data-track="day-by-day-03" title="Buy this track for $2">$2</a></li>
+                                    <li data-src="audio/day-by-day-04.mp3" data-title="Minha Flor" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Minha Flor">&#9654;</button><span class="track-name">Minha Flor</span><a class="track-buy" href="#" data-track="day-by-day-04" title="Buy this track for $2">$2</a></li>
+                                    <li data-src="audio/day-by-day-05.mp3" data-title="Há Dias" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Há Dias">&#9654;</button><span class="track-name">Há Dias</span><a class="track-buy" href="#" data-track="day-by-day-05" title="Buy this track for $2">$2</a></li>
+                                    <li data-src="audio/day-by-day-06.mp3" data-title="Deixa" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Deixa">&#9654;</button><span class="track-name">Deixa</span><a class="track-buy" href="#" data-track="day-by-day-06" title="Buy this track for $2">$2</a></li>
+                                    <li data-src="audio/day-by-day-07.mp3" data-title="Berenguendem" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Berenguendem">&#9654;</button><span class="track-name">Berenguendem</span><a class="track-buy" href="#" data-track="day-by-day-07" title="Buy this track for $2">$2</a></li>
+                                    <li data-src="audio/day-by-day-08.mp3" data-title="Me Faz Bem" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Me Faz Bem">&#9654;</button><span class="track-name">Me Faz Bem</span><a class="track-buy" href="#" data-track="day-by-day-08" title="Buy this track for $2">$2</a></li>
+                                    <li data-src="audio/day-by-day-09.mp3" data-title="Quase Nada" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Quase Nada">&#9654;</button><span class="track-name">Quase Nada</span><a class="track-buy" href="#" data-track="day-by-day-09" title="Buy this track for $2">$2</a></li>
+                                    <li data-src="audio/day-by-day-10.mp3" data-title="Minha Flor (My Love)" data-art="day-by-day-cover.jpg"><button class="track-play" aria-label="Play Minha Flor (My Love)">&#9654;</button><span class="track-name">Minha Flor (My Love)</span><a class="track-buy" href="#" data-track="day-by-day-10" title="Buy this track for $2">$2</a></li>
                                 </ol>
                             </details>
                         </div>
@@ -1328,17 +1349,17 @@
                             <details>
                                 <summary>11 Tracks</summary>
                                 <ol>
-                                    <li data-src="audio/primeiro-01.mp3" data-title="Não Me Faz Mal" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Não Me Faz Mal">&#9654;</button><span class="track-name">Não Me Faz Mal</span></li>
-                                    <li data-src="audio/primeiro-02.mp3" data-title="O Meu Lugar" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play O Meu Lugar">&#9654;</button><span class="track-name">O Meu Lugar</span></li>
-                                    <li data-src="audio/primeiro-03.mp3" data-title="Tom Maior" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Tom Maior">&#9654;</button><span class="track-name">Tom Maior</span></li>
-                                    <li data-src="audio/primeiro-04.mp3" data-title="Me Dobra" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Me Dobra">&#9654;</button><span class="track-name">Me Dobra</span></li>
-                                    <li data-src="audio/primeiro-05.mp3" data-title="Zulmira" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Zulmira">&#9654;</button><span class="track-name">Zulmira</span></li>
-                                    <li data-src="audio/primeiro-06.mp3" data-title="Reflexo" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Reflexo">&#9654;</button><span class="track-name">Reflexo</span></li>
-                                    <li data-src="audio/primeiro-07.mp3" data-title="Maneira de Amar" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Maneira de Amar">&#9654;</button><span class="track-name">Maneira de Amar</span></li>
-                                    <li data-src="audio/primeiro-08.mp3" data-title="Nosso Jardim" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Nosso Jardim">&#9654;</button><span class="track-name">Nosso Jardim</span></li>
-                                    <li data-src="audio/primeiro-09.mp3" data-title="Iara" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Iara">&#9654;</button><span class="track-name">Iara</span></li>
-                                    <li data-src="audio/primeiro-10.mp3" data-title="Gotas de Cor" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Gotas de Cor">&#9654;</button><span class="track-name">Gotas de Cor</span></li>
-                                    <li data-src="audio/primeiro-11.mp3" data-title="Clau" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Clau">&#9654;</button><span class="track-name">Clau</span></li>
+                                    <li data-src="audio/primeiro-01.mp3" data-title="Não Me Faz Mal" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Não Me Faz Mal">&#9654;</button><span class="track-name">Não Me Faz Mal</span><a class="track-buy" href="#" data-track="primeiro-01" title="Buy this track for $2">$2</a></li>
+                                    <li data-src="audio/primeiro-02.mp3" data-title="O Meu Lugar" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play O Meu Lugar">&#9654;</button><span class="track-name">O Meu Lugar</span><a class="track-buy" href="#" data-track="primeiro-02" title="Buy this track for $2">$2</a></li>
+                                    <li data-src="audio/primeiro-03.mp3" data-title="Tom Maior" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Tom Maior">&#9654;</button><span class="track-name">Tom Maior</span><a class="track-buy" href="#" data-track="primeiro-03" title="Buy this track for $2">$2</a></li>
+                                    <li data-src="audio/primeiro-04.mp3" data-title="Me Dobra" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Me Dobra">&#9654;</button><span class="track-name">Me Dobra</span><a class="track-buy" href="#" data-track="primeiro-04" title="Buy this track for $2">$2</a></li>
+                                    <li data-src="audio/primeiro-05.mp3" data-title="Zulmira" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Zulmira">&#9654;</button><span class="track-name">Zulmira</span><a class="track-buy" href="#" data-track="primeiro-05" title="Buy this track for $2">$2</a></li>
+                                    <li data-src="audio/primeiro-06.mp3" data-title="Reflexo" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Reflexo">&#9654;</button><span class="track-name">Reflexo</span><a class="track-buy" href="#" data-track="primeiro-06" title="Buy this track for $2">$2</a></li>
+                                    <li data-src="audio/primeiro-07.mp3" data-title="Maneira de Amar" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Maneira de Amar">&#9654;</button><span class="track-name">Maneira de Amar</span><a class="track-buy" href="#" data-track="primeiro-07" title="Buy this track for $2">$2</a></li>
+                                    <li data-src="audio/primeiro-08.mp3" data-title="Nosso Jardim" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Nosso Jardim">&#9654;</button><span class="track-name">Nosso Jardim</span><a class="track-buy" href="#" data-track="primeiro-08" title="Buy this track for $2">$2</a></li>
+                                    <li data-src="audio/primeiro-09.mp3" data-title="Iara" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Iara">&#9654;</button><span class="track-name">Iara</span><a class="track-buy" href="#" data-track="primeiro-09" title="Buy this track for $2">$2</a></li>
+                                    <li data-src="audio/primeiro-10.mp3" data-title="Gotas de Cor" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Gotas de Cor">&#9654;</button><span class="track-name">Gotas de Cor</span><a class="track-buy" href="#" data-track="primeiro-10" title="Buy this track for $2">$2</a></li>
+                                    <li data-src="audio/primeiro-11.mp3" data-title="Clau" data-art="primeiro-cover.jpg"><button class="track-play" aria-label="Play Clau">&#9654;</button><span class="track-name">Clau</span><a class="track-buy" href="#" data-track="primeiro-11" title="Buy this track for $2">$2</a></li>
                                 </ol>
                             </details>
                         </div>
